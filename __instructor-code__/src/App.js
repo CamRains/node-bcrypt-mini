@@ -11,7 +11,6 @@ class App extends Component {
       loggedInUser: {}
     };
   }
-
   componentDidMount() {
     axios.get("/auth/user").then(res => {
       this.setState({
@@ -19,8 +18,7 @@ class App extends Component {
       });
     });
   }
-
-  async login() {
+  login() {
     let { email, password } = this.state;
     axios.post("/auth/login", { email, password }).then(res => {
       this.setState({
@@ -31,7 +29,7 @@ class App extends Component {
     });
   }
 
-  async signup() {
+  signup() {
     let { email, password } = this.state;
     axios.post("/auth/signup", { email, password }).then(res => {
       this.setState({
